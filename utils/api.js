@@ -5,17 +5,17 @@ export function fetchCardsResult(){
     return AsyncStorage.getItem(CARDS_STORAGE_KEY)
 }
 
-export function submitDesk({ deskName }){
+export function submitDeck({ deckName }){
     return AsyncStorage.mergeItem(CARDS_STORAGE_KEY, JSON.stringify({
         deskName
     }))
 }
 
-export function submitCard({ deskName, cardName }){
+export function submitCard({ deckName, cardName }){
     return AsyncStorage.getItem(CARDS_STORAGE_KEY)
         .then((results) => {
             const data = JSON.parse(results)
-            data[deskName].questions.push(cardName)
+            data[deckName].questions.push(cardName)
             AsyncStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(data))
         })
 }
