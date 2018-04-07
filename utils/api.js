@@ -1,8 +1,11 @@
 import { AsyncStorage } from 'react-native'
-import { CARDS_STORAGE_KEY } from './_cards'
+import { CARDS_STORAGE_KEY, setResults } from './_cards'
 
 export function fetchCardsResult(){
+    console.log('entro a fetchCardsResult')
     return AsyncStorage.getItem(CARDS_STORAGE_KEY)
+        .then(console.log('paso a setResults'))
+        .then(setResults())
 }
 
 export function submitDeck({ deckName }){
@@ -19,3 +22,4 @@ export function submitCard({ deckName, cardName }){
             AsyncStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(data))
         })
 }
+

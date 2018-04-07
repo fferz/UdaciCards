@@ -11,6 +11,7 @@ import DecksList from './components/DecksList'
 
 export default class App extends React.Component {
   render() {
+      console.disableYellowBox = true;
     return (
       <Provider store={createStore(reducer)}>
         <View>

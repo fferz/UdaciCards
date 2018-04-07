@@ -31,6 +31,14 @@ function setDummyData(){
     }
     
     AsyncStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(dummyData))
+    console.log('dummyData', dummyData)
 
     return dummyData
+}
+
+export function setResults (results) {
+    console.log('set Results', results)
+    return (results === null || results === undefined)
+        ? setDummyData()
+        : results
 }
