@@ -18,7 +18,11 @@ class DecksList extends Component {
     render(){
         console.log('this.props', this.props)
         return (
-            <View>
+            <View style={{flex:1, justifyContent:'space-around' ,alignItems:'center'}}>
+                <Text>hola, esto es DeckList</Text>
+                <Text>hola, esto es DeckList</Text>
+                <Text>hola, esto es DeckList</Text>
+                <Text>hola, esto es DeckList</Text>
                 <Text>hola, esto es DeckList</Text>
             </View>
         )
