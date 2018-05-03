@@ -10,17 +10,14 @@ class DecksList extends Component {
         console.log('entro al componentDidMount')
         const { dispatch } = this.props
         fetchCardsResult()
-            .then((decks) => {
-                console.log('decks', decks)
-                dispatch(receiveDecks(decks))})
+            .then((decks) => dispatch(receiveDecks(decks)))
     }
 
     render(){
         console.log('this.props', this.props)
         return (
             <View style={{flex:1, justifyContent:'space-around' ,alignItems:'center'}}>
-                <Text>hola, esto es DeckList</Text>
-                <Text>hola, esto es DeckList</Text>
+                <Text>{this.props.dummyData.react}</Text>
                 <Text>hola, esto es DeckList</Text>
                 <Text>hola, esto es DeckList</Text>
                 <Text>hola, esto es DeckList</Text>
