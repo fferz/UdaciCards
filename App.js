@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers'
 
 //component
-import NewDeck from './components/NewDeck'
+import NewCard from './components/NewCard'
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={{ flex: 1}}>
-          <NewDeck />
+          <NewCard />
         </View>
       </Provider>
     );
