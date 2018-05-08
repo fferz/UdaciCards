@@ -6,7 +6,7 @@ function cards(state = {}, action){
             console.log('in reducer')
             return {
                 ...state,
-                ...action.decks,
+                decks: action.decks,
             }
         case ADD_DECK:
             return {
