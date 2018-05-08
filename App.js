@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers'
 
 //component
-import DecksList from './components/DecksList'
+import NewDeck from './components/NewDeck'
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={{ flex: 1}}>
-          <DecksList />
+          <NewDeck />
         </View>
       </Provider>
     );
