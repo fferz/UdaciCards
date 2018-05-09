@@ -13,13 +13,15 @@ export function receiveDecks (decks) {
 export function addDeck (deck) {
     return {
         type: ADD_DECK,
-        deck
+        deck,
     }
 }
 
-export function addCard (card) {
+export function addCard (deck, question, answer) {
     return {
         type: ADD_CARD,
-        card,
+        deck,
+        question,
+        answer,
     }
 }

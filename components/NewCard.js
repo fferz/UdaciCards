@@ -10,7 +10,7 @@ class NewCard extends Component {
         answer:'an answer',
     }
 
-    saveNewDeck = () => { }
+    saveNewcard = () => { }
 
     render(){
         return (
@@ -25,7 +25,7 @@ class NewCard extends Component {
                     onChangeText={(answer) => this.setState({answer})}
                     value={this.state.answer}
                 />
-                <TextButton style={styles.submitButton} onPress={this.saveNewDeck}>Submit</TextButton>
+                <TextButton style={styles.submitButton} onPress={this.saveNewCard}>Submit</TextButton>
             </View>
         )
     }

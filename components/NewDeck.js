@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, TextInput  } from 'react-native'
 import TextButton from './TextButton'
 import { red, black, white, gray } from '../utils/colors'
+import { connect } from 'react-redux'
+import { addDeck } from '../actions'
+import { submitDeck } from '../utils/api'
 
 class NewDeck extends Component {
 
@@ -9,7 +12,15 @@ class NewDeck extends Component {
         text:'Deck Title'
     }
 
-    saveNewDeck = () => { }
+    saveNewDeck = () => {
+        const deck = this.state
+
+        //update redux
+        this.props.dispatch(addDeck({deck}))
+
+        //update DB
+        submitDeck({deck})
+     }
 
     render(){
         return (
@@ -57,4 +68,8 @@ const styles = StyleSheet.create({
     }
 })
 
-export default NewDeck
+function mapStateToProps (state){
+    return state
+}
+
+export default connect(mapStateToProps)(NewDeck)

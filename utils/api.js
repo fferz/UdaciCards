@@ -10,15 +10,16 @@ export function fetchCardsResult(){
 
 export function submitDeck({ deckName }){
     return AsyncStorage.mergeItem(CARDS_STORAGE_KEY, JSON.stringify({
-        deskName
+        deckName
     }))
 }
 
-export function submitCard({ deckName, cardName }){
+export function submitCard({ deckName, cardQuestion, cardAnswer }){
     return AsyncStorage.getItem(CARDS_STORAGE_KEY)
         .then((results) => {
             const data = JSON.parse(results)
-            data[deckName].questions.push(cardName)
+            data[deckName].push(cardQuestion)
+            data[deckName].push(cardAnswer)
             AsyncStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(data))
         })
 }
